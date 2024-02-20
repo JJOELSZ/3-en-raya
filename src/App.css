@@ -1,0 +1,86 @@
+.game {
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  gap: 10px;
+  font-size: 2rem;
+}
+.cuadrado {
+  border: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.cuadrado.active {
+  background-color: black;
+  animation: turnActive 2s infinite;
+
+}
+.turnos {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.turnos > div {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 25px;
+}
+.resetGame {
+  border: 1px solid white;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+.resetGame:hover{
+  background-color:cadetblue;
+}
+.cuadrado:hover {
+  background-color: black;
+}
+.ganador {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.mensajeGanador {
+  background-color: black;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+}
+
+@keyframes turnActive {
+  0% {
+    transform: scale(1);
+
+  }
+  50% {
+    transform: scale(1.02);
+    background-color: black;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
